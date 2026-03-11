@@ -3,7 +3,6 @@ for i in range(1, 6):
 # ************* Task-1-Aishwarya ***************    
     print("\nEntering details for Employee:", i)
     name = input("Enter employee name: ")
-    normal_salary = int(input("Enter your monthly salary: "))
     salary = int(input("Enter your exact salary: "))
 # ************* Task-2-Anuska ***************
     if salary <30000:
@@ -14,6 +13,11 @@ for i in range(1, 6):
         tax = 0.2*salary
 
 # ************* Task-4-Asmita ***************    
+
+    print("\nEmployee Name:", name)
+    print("Tax Amount:", tax)
+    print("Normal Salary:", salary)
+    print("Exact Salary:", salary-tax)
         
     
     
