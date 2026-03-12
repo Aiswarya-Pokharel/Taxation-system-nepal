@@ -15,11 +15,28 @@ def calculate_net_salary(salary, tax):
 
 
 def save_tax_record():
-    name= input("Enter your name:")
-    salary = int(input("Enter your salary:"))
-    tax = calculate_tax(salary)
-    net_salary=calculate_net_salary(salary,tax)
     file = open("tax_records.txt", "a")   # "a" means append (add new data)
-    file.write(f"Name: {name}, Salary: {salary}, Tax: {tax}\n")
+    for i in range(3):
+        name= input("Enter employee name:")
+        salary = int(input("Enter employee salary:"))
+        tax = calculate_tax(salary)
+        net_salary=calculate_net_salary(salary,tax)
+    
+        file.write(f"{name}, {salary}, {tax}, {net_salary}\n")
     file.close()
     
+def read_tax_records():
+    file = open("tax_records.txt", "r")
+    data = file.read()
+
+    print("Tax Records:")
+    print("Name\t Salary\t Tax\t Net Salary")
+
+    for line in data.splitlines():
+        print(line.replace(",", "\t"))
+
+    file.close()
+
+if __name__ == "__main__":
+    save_tax_record()
+    read_tax_records()
